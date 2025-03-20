@@ -3,7 +3,7 @@ Git and Github
 -Helps to work together on a common project folder, and also saves history of the project. It saves the code, as well as who made what changes and when were they made.
 
 Git Repository is the folder where all this changes, history, etc are stored. Git Repo is just a separate folder storing/copying the exact things what you r doing in your project folder/work directory. 
-**GIT-**
+GIT-
 1. Get inside the project folder by cd name.
 2. Than do git init. This makes the git repo that will now store all the history of this folder. The folder is named .git
 3. The .git folder is a hidden folder. So ls won’t show it. Do ls -a This shows all the hidden files as well
@@ -24,14 +24,23 @@ Git Repository is the folder where all this changes, history, etc are stored. Gi
 18. Git stash  stores the uncommitted work in some temporary folder, and removes it from actual working directory i.e the uncommitted changes would be reversed in actual folder. And if I want to bring this changes into project, do git stash pop. It brings it all to staging/tracking area. Now commit the changes. So It helps up when nor we want to loose our changes, and nor we want to commit it. 
 19. However, if we have that changes in git stash and now we no longer desire it, and so we can delete it permanently by git stash clear
 
-**Github is one of the platforms/online website that allows us to host our git repositories. Some other platforms are gitlab, bitbucket, etc.**
-**GITHUB-**
+Github is one of the platforms/online website that allows us to host our git repositories. Some other platforms are gitlab, bitbucket, etc.
+GITHUB-
 Hosting your own project-
 1. Dashboard -> Create repository -> Url generated
-2. Now, we want this URL to be attached to our project/working directory. git remote add origin URL Origin Is the name we gave to this URL
+2. Now, we want this URL to be connected to our project/working directory. git remote add origin URL .By convention, all repositories in our personal github account are called origin. 
 3. Git remote -v shows all the URLs attached to this particular folder/working directory
-4.  Now, to share the changes to this url, do git push origin main  main is the branch where we want to push these changes.
+4. Now, to share the changes to this URL, do git push origin main  main is the branch where we want to push these changes made in work folder(actual local working directory) onto origin(i.e remote URL)
+5. To create a new brach,  git branch name. Branching is useful. For eg- if we want to edit a code, we should do it on a separate branch so that the main code doesn’t get affected.
+6. Git branch to check what branch we are on
+7. Now, head will be pointing towards this branch i.e all the changes u now make and commit will be added onto this branch.
+8. To shift to branch, do git checkout name
+9. S
 
 Red- these lines were deleted
 Green- these lines were added
+
+1. To open the GitHub Folder in your laptop i.e local machine, do github clone URL .The path to this local folder would be the same folder you typed this command in.
+Github don’t allow to do push,pull etc without asking for username and password. Password is not the id password but this PAToken generated through developer options ins settings. This will be asked in terminal when you try to push/pull etc.
+
 
