@@ -20,27 +20,24 @@ GIT-
 14. The git status will remain clean, as no modification has actually been made. So nothing to be tracked will show up if I do git status.
 15. Now, let’s say I deleted the text file, and then committed the change rather than restoring it, now I can’t restore the file as even git repo don’t have the file now.
 16. We can’t remove a particular commit but we can remove the latest sequence till a point we want in git repo. To do it- git reset hashid Take commit hash-id from git log. This will now keep the git log till the point of this hash-id. And now, all this things that are different in actual work directory than to git repo, would be placed in un-staged area. Eg- I don’t have a file in work directory as I created and deleted it. But in git repo, I reset it till the point I created it. So now in un-staging area, I will have it as deleted this folder. Or if I deleted the file and made a new one. In unstaged area, I will be shown as rename.
-17. To see al the changes in a particular commit do, git show hashid
-18. Git stash  stores the uncommitted work in some temporary folder, and removes it from actual working directory i.e the uncommitted changes would be reversed in actual folder. And if I want to bring this changes into project, do git stash pop. It brings it all to staging/tracking area. Now commit the changes. So It helps up when nor we want to loose our changes, and nor we want to commit it. 
-19. However, if we have that changes in git stash and now we no longer desire it, and so we can delete it permanently by git stash clear
+17. Git reset —hard will even remove the changes from working directory and not just git repo.
+18. To see al the changes in a particular commit do, git show hashid
+19. Git stash  stores the uncommitted work in some temporary folder, and removes it from actual working directory i.e the uncommitted changes would be reversed in actual folder. And if I want to bring this changes into project, do git stash pop. It brings it all to staging/tracking area. Now commit the changes. So It helps up when nor we want to loose our changes, and nor we want to commit it. 
+20. However, if we have that changes in git stash and now we no longer desire it, and so we can delete it permanently by git stash clear
 
 Github is one of the platforms/online website that allows us to host our git repositories. Some other platforms are gitlab, bitbucket, etc.
 GITHUB-
-Hosting your own project-
 1. Dashboard -> Create repository -> Url generated
 2. Now, we want this URL to be connected to our project/working directory. git remote add origin URL .By convention, all repositories in our personal github account are called origin. 
 3. Git remote -v shows all the URLs attached to this particular folder/working directory
 4. Now, to share the changes to this URL, do git push origin main  main is the branch where we want to push these changes made in work folder(actual local working directory) onto origin(i.e remote URL)
-5. To create a new brach,  git branch name. Branching is useful. For eg- if we want to edit a code, we should do it on a separate branch so that the main code doesn’t get affected.
+5. To create a new branch from current situation,  git branch name. Branching is useful. For eg- if we want to edit a code, we should do it on a separate branch so that the main code doesn’t get affected.
 6. Git branch to check what branch we are on
 7. Now, head will be pointing towards this branch i.e all the changes u now make and commit will be added onto this branch.
-8. To shift to branch, do git checkout name
-9. S
-
-Red- these lines were deleted
-Green- these lines were added
-
-1. To open the GitHub Folder in your laptop i.e local machine, do github clone URL .The path to this local folder would be the same folder you typed this command in.
+8. To shift to the branch, do git checkout name To delete a branch do git branch -d name
+9. Git diff name to see difference bw two branches you are in and the branch name you mentioned. Now if u want to merge the name branch to the branch you are in, do git merge name
+10. Or we can merge branches through GitHub directly, when we push changes changes to the branch, we are now shown an option of compare and pull request on GitHub. Through this, we can merge, and it will check if we can merge. Because if two branches have lines written at same index, so it can create conflict. Hence, this check. I foo conflict is there, we will be able to merge.
+11. But this feature has been merged on GitHub only, not on local working directory yet. To bring the changes from GitHub to our local directory we do git pull origin main
+12. To open the GitHub Folder in your laptop i.e local machine, do github clone URL .The path to this local folder would be the same folder you typed this command in.
+13. To create a copy of someone else’s GitHub folder into your GitHub account, go on that project, and click fork. Now clone it your local repo machine and work on it. And now to merge this change to original, create pull request on GitHub
 Github don’t allow to do push,pull etc without asking for username and password. Password is not the id password but this PAToken generated through developer options ins settings. This will be asked in terminal when you try to push/pull etc.
-
-
